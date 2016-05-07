@@ -11,8 +11,8 @@ game = [[e, e, e],
         [e, e, e]]
 
 #region print the board
-def printBoard(gameboard):
-    for outerloopE in gameboard:
+def print_board(game_board):
+    for outerloopE in game_board:
         for innerloopE in outerloopE:
             var = ""
             if innerloopE == e:
@@ -21,7 +21,7 @@ def printBoard(gameboard):
                 var = "o"
             else:
                 var = "x"
-            print(var, end=" ")
+            print(var, end = " ")
         print("\n")
 
 
@@ -75,14 +75,14 @@ def loopgame():
                 game[row][col] = x if turn == "x" else o
             else:
                 print("Value not empty")
-                printBoard(game)
+                print_board(game)
                 continue
         else:
             print("Index out of bounds. Try values between 0 - 2")
             continue
         #evaluate if someone has won
         print()
-        printBoard(game)
+        print_board(game)
         winner = checkwinner(game)
         if winner:
             print("{} has won!!!".format(winner))
@@ -100,5 +100,5 @@ def loopgame():
 #endregion
 
 if __name__ == "__main__":
-    printBoard(game)
+    print_board(game)
     loopgame()
