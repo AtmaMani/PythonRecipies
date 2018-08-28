@@ -11,13 +11,13 @@ for image in image_list:
     img_obj = Image.open(image)
     current_size = img_obj.size
 
-    # make images 70% smaller
-    new_size = (round(current_size[0]/7), round(current_size[1]/7))
+    # make images 50% smaller
+    new_size = (round(current_size[0]/1), round(current_size[1]/1))
     # Use high quality downsampling filter to reduce size without noise
     img_obj_smaller = img_obj.resize(new_size, Image.LANCZOS)
 
     # Save to disk with same name and a suffix "_sm"
     pth = Path(image)
     new_name = pth.name.rsplit('.', 1)[0] + "_sm." + pth.name.split('.')[-1]
-    img_obj_smaller.save(str(pth.parent) + "/smaller/" + new_name)
-    print(str(pth.parent) + "/smaller/" + new_name)
+    img_obj_smaller.save(str(pth.parent) + "/same_dims/" + new_name)
+    print(str(pth.parent) + "/same_dims/" + new_name)
