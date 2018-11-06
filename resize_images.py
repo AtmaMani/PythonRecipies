@@ -4,7 +4,7 @@ from PIL import Image
 from pathlib import Path
 
 input_path = r'/Users/atma6951/Documents/temp/pics'
-image_list = glob(input_path + "/*.jpg", recursive=False)
+image_list = glob(input_path + "/*.png", recursive=False)
 # print(image_list)
 
 for image in image_list:
@@ -18,6 +18,7 @@ for image in image_list:
 
     # Save to disk with same name and a suffix "_sm"
     pth = Path(image)
-    new_name = pth.name.rsplit('.', 1)[0] + "_sm." + pth.name.split('.')[-1]
+    # new_name = pth.name.rsplit('.', 1)[0] + "_sm." + pth.name.split('.')[-1]
+    new_name = pth.name.rsplit('.', 1)[0] + "_sm.jpg"
     img_obj_smaller.save(str(pth.parent) + "/same_dims/" + new_name)
     print(str(pth.parent) + "/same_dims/" + new_name)
